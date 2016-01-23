@@ -1,0 +1,17 @@
+86ddaff15d43dae805c4497cadba4b17 *DESCRIPTION
+4bddd56f28b2dd5bae00688dc0a0f0b9 *NAMESPACE
+e91c161bf8437dbbf7faf78ef90b1ae6 *R/AllClasses.R
+bf71134561da5ae189697b7baf41a60c *R/Kmat.R
+a8e2ca8bdbadad23eae31cec14bbbf1e *R/RAMSVM_solve.R
+c68eb84a3c65fd1cdd9ee156c6c7ffc6 *R/XI.gen.R
+b0e3b379fd5ce07cb03652ff59591304 *R/Y.matrix.gen.R
+16b1b063b0db97ffa9578ca6f940a142 *R/beta.R
+05da9d82a017be944e6b5c5dc8897f6e *R/feFunc.R
+2ea8a39fd6518ab957dbb50b72c2cb56 *R/methods-predict.R
+bc84de4d37b2b87d877be0674325128d *R/pred.R
+3239b39d8ba8f974a7a36bf98a3afa63 *R/ramsvm.R
+e143261742e8caa5b761c7f5a964d8b3 *R/xinner.R
+10ba1270b37b1d360b51c2feafe82a66 *man/predict.ramsvm.Rd
+224fed233183cffd0c2872b8b7df4a38 *man/ramsvm.Rd
+fcdd6e2b41e3efb0879980b74658ce49 *src/alpha_update.c
+d908b8a9224a696c9ccac259da64a980 *src/local_alpha_update.c

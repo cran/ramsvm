@@ -1,0 +1,12 @@
+useDynLib(ramsvm)
+
+import(foreach,
+       doParallel,
+       methods,
+       parallel)
+
+importFrom("stats", predict)
+
+export(ramsvm)
+exportMethods(predict)
+ 
