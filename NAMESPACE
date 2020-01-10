@@ -1,4 +1,4 @@
-useDynLib(ramsvm)
+useDynLib(ramsvm, .registration = TRUE)
 
 import(foreach,
        doParallel,

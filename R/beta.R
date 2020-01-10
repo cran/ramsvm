@@ -1,7 +1,7 @@
 beta_linear <- function(x, y, k, my, warm, lambda){
 
-  nobs <- nrow(x)
-  np <- ncol(x)
+  nobs <- nrow(x = x)
+  np <- ncol(x = x)
 
   beta <- matrix(data = 0.0, nrow = np, ncol = (k-1L))
 
@@ -27,9 +27,9 @@ beta_linear <- function(x, y, k, my, warm, lambda){
 
 beta_kernel <- function(x, y, k, my, warm, lambda){
 
-  nobs <- nrow(x)
+  nobs <- nrow(x = x)
   dnobs <- as.double(nobs)
-  np <- ncol(x)
+  np <- ncol(x = x)
 
   beta <- matrix(data = 0.0, nrow = nobs, ncol = (k-1L))
   beta0 <- matrix(data = 0.0, nrow = 1L, ncol = (k-1L))

@@ -27,9 +27,9 @@
                 value.}    
 }
 \references{
-C. Zhang, Y. Liu, J. Wang and H. Zhu. (2015+). 
+C. Zhang, Y. Liu, J. Wang and H. Zhu. (2016). 
 Reinforced Angle-based Multicategory Support Vector Machines.
-Journal of Computational and Graphical Statistics, in press.}
+Journal of Computational and Graphical Statistics, 25, 806-825.}
 \author{Chong Zhang, Yufeng Liu, and Shannon Holloway}
 
 \seealso{\code{\link{ramsvm}}} 

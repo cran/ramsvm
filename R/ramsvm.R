@@ -13,21 +13,21 @@ ramsvm <- function(x,
   #------------------------------------------------------------------#
   # Verify that kernel is one of linear, polynomial, gaussian        #
   #------------------------------------------------------------------#
-  kernel <- tolower(kernel)
+  kernel <- tolower(x = kernel)
   if( !(kernel %in% c("linear","polynomial", "gaussian")) ) {
     stop("kernel must be one of ('linear', 'polynomial', 'gaussian')")
   }
 
   if( kernel %in% c("polynomial", "gaussian") ) {
-    if( is(kparam, "NULL") ) kparam = 1.0
+    if( is.null(x = kparam) ) kparam = 1.0
   }
 
   #------------------------------------------------------------------#
   # Verify that covariates are provided in matrix form with no NA/NAN#
   #------------------------------------------------------------------#
-  if( !is(x, "matrix") ) stop("The covariates should be a matrix.")  
-  if( any(is.na(x)) || any(is.nan(x)) ) {
-    stop("There should be no NA/NaN in the covariates.")
+  if( !is.matrix(x = x) ) stop("The covariates must be a matrix.")  
+  if( any(is.na(x = x)) || any(is.nan(x = x)) ) {
+    stop("There must be no NA/NaN in the covariates.")
   }
 
   nobs <- nrow(x)
@@ -35,18 +35,17 @@ ramsvm <- function(x,
   #------------------------------------------------------------------#
   # Verify that the number of labels matches the number of obs.      #
   #------------------------------------------------------------------#
-  if( length(y) != nobs ) {
-    stop(paste("The dimension of covariates should match the",
-               "length of the label."))
+  if( length(x = y) != nobs ) {
+    stop("the dimension of covariates must match the length of the label")
   }
 
   #------------------------------------------------------------------#
   # determine the number of classes; must be > 1.                    #
   #------------------------------------------------------------------#
-  k <- length(levels(as.factor(y)))
-  if( k < 2L) stop("There must be at least two classes.")
+  k <- length(x = levels(x = as.factor(x = y)))
+  if( k < 2L) stop("there must be at least two classes")
   
-  if( is(epsilon, "NULL") ) {
+  if( is.null(x = epsilon) ) {
     #--------------------------------------------------------------#
     # If not provided, calculate epsilon.                          #
     #--------------------------------------------------------------#
@@ -55,15 +54,15 @@ ramsvm <- function(x,
     #--------------------------------------------------------------#
     # If provided, verify that epsilon is a positive scalar.       #
     #--------------------------------------------------------------#
-    if( is.na(epsilon) || is.nan(epsilon) ) {
-      stop("epsilon should not be NA/NaN.")
+    if( is.na(x = epsilon) || is.nan(x = epsilon) ) {
+      stop("epsilon must not be NA/NaN")
     }
-    if( !is(epsilon, "numeric") ) stop("Epsilon should be numeric.")
-    if( epsilon <= 0.0 ) stop("Epsilon should be strictly positive.")
-    if( length(epsilon) > 1.5 ) stop("Epsilon should be a scalar.")
+    if( !is.numeric(x = epsilon) ) stop("epsilon must be numeric")
+    if( epsilon <= 0.0 ) stop("epsilon must be strictly positive")
+    if( length(x = epsilon) > 1.5 ) stop("epsilon must be a scalar")
   }
     
-  if( is(weight, "NULL") ) {
+  if( is.null(x = weight) ) {
     #--------------------------------------------------------------#
     # If not provided, set weight to 1.0                           #
     #--------------------------------------------------------------#
@@ -73,27 +72,26 @@ ramsvm <- function(x,
     # If provided, verify that weight is a positive, numeric vector#
     # of length equivalent to the number of observations.          #
     #--------------------------------------------------------------#
-    if( !is(weight, "numeric") ) {
-      stop("The weight vector should be numeric.")
+    if( !is.numeric(x = weight) ) {
+      stop("weight vector must be numeric")
     }
-    if( any(is.na(weight)) || any(is.nan(weight)) ) {
-      stop("There should be no NA/NaN in the weight vector.")
+    if( any(is.na(x = weight)) || any(is.nan(x = weight)) ) {
+      stop("no NA/NaN allowed in weight vector")
     }
     if( min(weight) < 0.0 ) {
-      stop("The weight vector should be non-negative.")
+      stop("weight vector must be non-negative")
     }
-    if( length(weight) != nobs ) {
-      stop(paste("The length of the weight should agree with",
-                 "the number of observations."))
+    if( length(x = weight) != nobs ) {
+      stop("length of weight must be the number of observations")
     }
   }
 
-  if( !is(warm, "NULL") ) {
+  if( !is.null(x = warm) ) {
     #--------------------------------------------------------------#
     # If provided, verify dims of starter matrix are appropriate.  #
     #--------------------------------------------------------------#
-    if( {nrow(warm) != nobs} || {ncol(warm) != k} ) {
-      stop("A dimension of the warm start matrix is incorrect.")
+    if( {nrow(x = warm) != nobs} || {ncol(x = warm) != k} ) {
+      stop("dimension of the warm start matrix is incorrect")
     }
   } else {
     #--------------------------------------------------------------#
@@ -105,13 +103,13 @@ ramsvm <- function(x,
   #------------------------------------------------------------------#
   # Verify that all lambdas are positive.                            #
   #------------------------------------------------------------------#
-  if( any(lambda <= 0) ) stop("All lambdas must be positive.")
+  if( any(lambda <= 0) ) stop("all lambdas must be positive.")
 
   #------------------------------------------------------------------#
   # If the lambdas are not sorted warn user that they are reorder.   #
   #------------------------------------------------------------------#
   if( any( order(lambda) != order(sort(lambda,TRUE))) ) {
-    warning("The order of lambda has been changed.")
+    warning("order of lambda has been changed")
   }
 
   #------------------------------------------------------------------#
@@ -119,7 +117,7 @@ ramsvm <- function(x,
   #------------------------------------------------------------------#
   lambda = as.double(rev(sort(lambda)))
 
-  if( is(nb.core, "NULL") && large ) {
+  if( is.null(x = nb.core) && large ) {
     #--------------------------------------------------------------#
     # If this is a large calculation and the number of cores are   #
     # not specified, detect the number of available cores.         #

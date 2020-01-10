@@ -1,0 +1,6 @@
+ramsvm v2.0 (Release date: 2020-01-08)
+==============
+
+Changes:
+
+* Changes to address condition has length > 1 failure associated with matrix -> matrix/array
