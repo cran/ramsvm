@@ -4,3 +4,10 @@ ramsvm v2.0 (Release date: 2020-01-08)
 Changes:
 
 * Changes to address condition has length > 1 failure associated with matrix -> matrix/array
+
+ramsvm v2.1 (Release date: 2020-05-27)
+==============
+
+Changes:
+
+* Correction to ramsvm_init.c to correct mismatch of arguments identified by lto

@@ -1,6 +1,6 @@
-f52469fc126e3de83136c52764e50698 *DESCRIPTION
+811a61198e89807b60f00b9ba4eba4c4 *DESCRIPTION
 8a48bfaf5e652121fae1e3ea4fc8a61a *NAMESPACE
-1cde7fb9a99ca60cb292a1457a60559a *NEWS
+028a5de56e220a6bb7ca9f54acfc4a09 *NEWS
 e91c161bf8437dbbf7faf78ef90b1ae6 *R/AllClasses.R
 bf71134561da5ae189697b7baf41a60c *R/Kmat.R
 a8e2ca8bdbadad23eae31cec14bbbf1e *R/RAMSVM_solve.R
@@ -16,4 +16,4 @@ e143261742e8caa5b761c7f5a964d8b3 *R/xinner.R
 9ef6073020dfc831f29ef1c21b369a61 *man/ramsvm.Rd
 fcdd6e2b41e3efb0879980b74658ce49 *src/alpha_update.c
 d908b8a9224a696c9ccac259da64a980 *src/local_alpha_update.c
-c0771e00b78067509ae7f5a002fbb8c0 *src/ramsvm_init.c
+c40f51cc2780439990388db25bdfe802 *src/ramsvm_init.c
