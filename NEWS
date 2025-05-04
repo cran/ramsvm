@@ -1,3 +1,10 @@
+ramsvm v2.4 (Release date: 2025-05-04)
+==============
+
+Changes:
+
+* Added authors@R field to DESCRIPTION
+
 ramsvm v2.0 (Release date: 2020-01-08)
 ==============
 
